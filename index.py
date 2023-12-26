@@ -7,18 +7,13 @@ import joblib
 
 # 가상의 데이터 생성 (실제 데이터를 사용해야 함)
 data = {
-    '방의위치': [1, 2, 3, 4, 5],
-    '방의크기': [50, 60, 70, 80, 90],
-    '편의시설': [1, 2, 3, 4, 5],
-    '계절': [1, 2, 3, 4, 1],
-    '가격': [100, 120, 150, 180, 200]
 }
 
 df = pd.DataFrame(data)
 
 # Features와 Labels 설정
-X = df.drop('가격', axis=1)
-y = df['가격']
+X = df.drop('price', axis=1)
+y = df['price']
 
 # 학습 데이터와 테스트 데이터로 분리
 X_train, X_test, y_train, y_test = train_test_split(

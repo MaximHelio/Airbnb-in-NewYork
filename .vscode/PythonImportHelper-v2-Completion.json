@@ -9,6 +9,42 @@
         "documentation": {}
     },
     {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "seaborn",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "seaborn",
+        "description": "seaborn",
+        "detail": "seaborn",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
         "label": "train_test_split",
         "importPath": "sklearn.model_selection",
         "description": "sklearn.model_selection",
@@ -42,12 +78,30 @@
         "documentation": {}
     },
     {
-        "label": "numpy",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "numpy",
-        "description": "numpy",
-        "detail": "numpy",
+        "label": "os.environ['KAGGLE_USERNAME']",
+        "kind": 5,
+        "importPath": "code",
+        "description": "code",
+        "peekOfCode": "os.environ['KAGGLE_USERNAME'] = 'fastcampuskim'\nos.environ['KAGGLE_KEY'] = 'c939a1e37f5ca93b6406a66fc8bb08e5'\ndf = pd.read_csv('AB_NYC_2019.csv')\ndf.head()\ndf['room_type'].value_counts\ndf.info()\ndf['availability_365'].hist()\nprint(df)",
+        "detail": "code",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ['KAGGLE_KEY']",
+        "kind": 5,
+        "importPath": "code",
+        "description": "code",
+        "peekOfCode": "os.environ['KAGGLE_KEY'] = 'c939a1e37f5ca93b6406a66fc8bb08e5'\ndf = pd.read_csv('AB_NYC_2019.csv')\ndf.head()\ndf['room_type'].value_counts\ndf.info()\ndf['availability_365'].hist()\nprint(df)",
+        "detail": "code",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "code",
+        "description": "code",
+        "peekOfCode": "df = pd.read_csv('AB_NYC_2019.csv')\ndf.head()\ndf['room_type'].value_counts\ndf.info()\ndf['availability_365'].hist()\nprint(df)",
+        "detail": "code",
         "documentation": {}
     },
     {
@@ -64,7 +118,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "data = {\n    '방의위치': [1, 2, 3, 4, 5],\n    '방의크기': [50, 60, 70, 80, 90],\n    '편의시설': [1, 2, 3, 4, 5],\n    '계절': [1, 2, 3, 4, 1],\n    '가격': [100, 120, 150, 180, 200]\n}\ndf = pd.DataFrame(data)\n# Features와 Labels 설정\nX = df.drop('가격', axis=1)",
+        "peekOfCode": "data = {\n}\ndf = pd.DataFrame(data)\n# Features와 Labels 설정\nX = df.drop('price', axis=1)\ny = df['price']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습",
         "detail": "index",
         "documentation": {}
     },
@@ -73,7 +127,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "df = pd.DataFrame(data)\n# Features와 Labels 설정\nX = df.drop('가격', axis=1)\ny = df['가격']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)",
+        "peekOfCode": "df = pd.DataFrame(data)\n# Features와 Labels 설정\nX = df.drop('price', axis=1)\ny = df['price']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)",
         "detail": "index",
         "documentation": {}
     },
@@ -82,7 +136,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "X = df.drop('가격', axis=1)\ny = df['가격']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n# 테스트 데이터에 대한 예측\ny_pred = model.predict(X_test)",
+        "peekOfCode": "X = df.drop('price', axis=1)\ny = df['price']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n# 테스트 데이터에 대한 예측\ny_pred = model.predict(X_test)",
         "detail": "index",
         "documentation": {}
     },
@@ -91,7 +145,7 @@
         "kind": 5,
         "importPath": "index",
         "description": "index",
-        "peekOfCode": "y = df['가격']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n# 테스트 데이터에 대한 예측\ny_pred = model.predict(X_test)\n# 모델 평가 (MSE 예시)",
+        "peekOfCode": "y = df['price']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n# 테스트 데이터에 대한 예측\ny_pred = model.predict(X_test)\n# 모델 평가 (MSE 예시)",
         "detail": "index",
         "documentation": {}
     },
