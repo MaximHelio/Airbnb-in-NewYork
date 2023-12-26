@@ -1,0 +1,161 @@
+[
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "train_test_split",
+        "importPath": "sklearn.model_selection",
+        "description": "sklearn.model_selection",
+        "isExtraImport": true,
+        "detail": "sklearn.model_selection",
+        "documentation": {}
+    },
+    {
+        "label": "LinearRegression",
+        "importPath": "sklearn.linear_model",
+        "description": "sklearn.linear_model",
+        "isExtraImport": true,
+        "detail": "sklearn.linear_model",
+        "documentation": {}
+    },
+    {
+        "label": "mean_squared_error",
+        "importPath": "sklearn.metrics",
+        "description": "sklearn.metrics",
+        "isExtraImport": true,
+        "detail": "sklearn.metrics",
+        "documentation": {}
+    },
+    {
+        "label": "joblib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "joblib",
+        "description": "joblib",
+        "detail": "joblib",
+        "documentation": {}
+    },
+    {
+        "label": "numpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "numpy",
+        "description": "numpy",
+        "detail": "numpy",
+        "documentation": {}
+    },
+    {
+        "label": "predict_price",
+        "kind": 2,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "def predict_price(features):\n    # 모델 로드\n    loaded_model = joblib.load('airbnb_price_prediction_model.joblib')\n    # 예측\n    prediction = loaded_model.predict([features])\n    return prediction[0]\n# 가상의 특정 방 정보로 가격 예측\nsample_features = {\n    '방의위치': 3,\n    '방의크기': 75,",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "data = {\n    '방의위치': [1, 2, 3, 4, 5],\n    '방의크기': [50, 60, 70, 80, 90],\n    '편의시설': [1, 2, 3, 4, 5],\n    '계절': [1, 2, 3, 4, 1],\n    '가격': [100, 120, 150, 180, 200]\n}\ndf = pd.DataFrame(data)\n# Features와 Labels 설정\nX = df.drop('가격', axis=1)",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "df = pd.DataFrame(data)\n# Features와 Labels 설정\nX = df.drop('가격', axis=1)\ny = df['가격']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "X",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "X = df.drop('가격', axis=1)\ny = df['가격']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n# 테스트 데이터에 대한 예측\ny_pred = model.predict(X_test)",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "y",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "y = df['가격']\n# 학습 데이터와 테스트 데이터로 분리\nX_train, X_test, y_train, y_test = train_test_split(\n    X, y, test_size=0.2, random_state=42)\n# 선형 회귀 모델 학습\nmodel = LinearRegression()\nmodel.fit(X_train, y_train)\n# 테스트 데이터에 대한 예측\ny_pred = model.predict(X_test)\n# 모델 평가 (MSE 예시)",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "model",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "model = LinearRegression()\nmodel.fit(X_train, y_train)\n# 테스트 데이터에 대한 예측\ny_pred = model.predict(X_test)\n# 모델 평가 (MSE 예시)\nmse = mean_squared_error(y_test, y_pred)\nprint(f'Mean Squared Error: {mse}')\n# 모델 저장\njoblib.dump(model, 'airbnb_price_prediction_model.joblib')\n# 예측 함수 정의",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "y_pred",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "y_pred = model.predict(X_test)\n# 모델 평가 (MSE 예시)\nmse = mean_squared_error(y_test, y_pred)\nprint(f'Mean Squared Error: {mse}')\n# 모델 저장\njoblib.dump(model, 'airbnb_price_prediction_model.joblib')\n# 예측 함수 정의\ndef predict_price(features):\n    # 모델 로드\n    loaded_model = joblib.load('airbnb_price_prediction_model.joblib')",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "mse",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "mse = mean_squared_error(y_test, y_pred)\nprint(f'Mean Squared Error: {mse}')\n# 모델 저장\njoblib.dump(model, 'airbnb_price_prediction_model.joblib')\n# 예측 함수 정의\ndef predict_price(features):\n    # 모델 로드\n    loaded_model = joblib.load('airbnb_price_prediction_model.joblib')\n    # 예측\n    prediction = loaded_model.predict([features])",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "sample_features",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "sample_features = {\n    '방의위치': 3,\n    '방의크기': 75,\n    '편의시설': 3,\n    '계절': 2\n}\npredicted_price = predict_price(sample_features)\nprint(f'예상 가격: ${predicted_price:.2f}')",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "predicted_price",
+        "kind": 5,
+        "importPath": "index",
+        "description": "index",
+        "peekOfCode": "predicted_price = predict_price(sample_features)\nprint(f'예상 가격: ${predicted_price:.2f}')",
+        "detail": "index",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "data = {\n    'A': [1, 2, np.nan, 4],\n    'B': [5, np.nan, 7, 8],\n    'C': [9, 10, 11, 12]\n}\ndf = pd.DataFrame(data)\nprint(df)",
+        "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "df",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "df = pd.DataFrame(data)\nprint(df)",
+        "detail": "test",
+        "documentation": {}
+    }
+]
